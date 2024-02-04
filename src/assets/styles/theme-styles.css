@@ -1,0 +1,29 @@
+html[data-theme='light'] {
+    --backbroung-primary-color: #fff;
+    --slider-background-color: #7a7a7a;
+    --sidebar-background-color: #9d9d9d;
+    --main-border-color: #333;
+    --primary-color: #000;
+    --card-background-color: #f1f1f1;
+    --input-border-color: #9d9d9d;
+    --input-background-color: #ffffff;
+    --border-color: #666;
+    --text-color: #333;
+    --price-color: #6e6e6e;
+    --card-hover-background-color: #eaeaea;
+}
+
+html[data-theme='dark'] {
+    --slider-background-color: #2196f3;
+    --sidebar-background-color: #1e1e1e;
+    --backbroung-primary-color: #000;
+    --main-border-color: #fff;
+    --primary-color: #fff;
+    --card-background-color: #2f2f2f;
+    --input-border-color: none;
+    --input-background-color: #d3d3d3;
+    --border-color: #999;
+    --text-color: #ddd;
+    --price-color: #a2a2a2;
+    --card-hover-background-color: #444;
+}

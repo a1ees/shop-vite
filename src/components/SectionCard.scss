@@ -1,0 +1,20 @@
+.cards {
+  margin-top: 20px;
+  &__button {
+    margin-left: 10px;
+  }
+  &__items {
+    a {
+      text-decoration: none;
+    }
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  &__not-found {
+    color: var(--text-color);
+    font-size: 25px;
+  }
+}

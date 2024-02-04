@@ -1,0 +1,31 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: var(--card-background-color);
+  transition: background-color 0.2s ease-in-out;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+  max-width: 280px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--card-hover-background-color);
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+
+  &__price {
+    font-size: 16px;
+    color: var(--price-color);
+  }
+}
+
