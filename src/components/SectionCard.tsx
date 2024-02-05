@@ -7,10 +7,13 @@ import Input from "./UI/Input.tsx";
 import BackButton from "./UI/BackButton.tsx";
 import {Item, Service} from "../ts/interfaces/catlist_interfaces.ts";
 
+type catList = {
+    list: Item[];
+}
 const SectionCard: React.FC = () => {
 
     const [cardList, setCardList] = useState<(Item | Service)[]>([]);
-    const list: Item[] = cat.list;
+    const { list }: catList = cat;
     console.log(list)
     const [searchValue, setSearchValue] = useState<string>('');
     const { pathname } = useLocation();
@@ -22,6 +25,11 @@ const SectionCard: React.FC = () => {
         currenPathArr.pop();
         navigate(`/${currenPathArr.join('/')}`);
     };
+
+    const setValue = (inputValue: string) => {
+        navigate('/')
+        setSearchValue(inputValue)
+    }
 
     // получает карточки исходя из данных в пути
     const getCardListByPath = useCallback((list: Item[] | Service[] | undefined, pathArray: string[]): Service[] | Item[] | undefined | false => {
@@ -110,7 +118,7 @@ const SectionCard: React.FC = () => {
 
     return (
         <div className="cards">
-            <Input additionalClass="cards__input" searchValue={searchValue} setSearchValue={setSearchValue}/>
+            <Input additionalClass="cards__input" searchValue={searchValue} setSearchValue={setValue}/>
 
             {shouldShowButton &&
                 <BackButton additionalClass="cards__button" onClick={goBack}/>
