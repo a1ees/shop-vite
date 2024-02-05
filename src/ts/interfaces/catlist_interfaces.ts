@@ -1,17 +1,10 @@
-export type Item = {
+export interface Item {
     description: string;
     id: number;
     name: string;
     order: number;
-} & (Subcategory | Services)
-
-type Subcategory = {
-    tag: "cat";
+    tag: string;
     subcategory?: Item[];
-}
-
-type Services = {
-    tag: "subcat";
     services?: Service[];
 }
 
@@ -20,5 +13,5 @@ export interface Service {
     id: number;
     name: string;
     price: number;
-    tag: "serv";
+    tag: string;
 }
