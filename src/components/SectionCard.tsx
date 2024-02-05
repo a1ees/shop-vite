@@ -26,7 +26,7 @@ const SectionCard: React.FC = () => {
         navigate(`/${currenPathArr.join('/')}`);
     };
 
-    const setValue = (inputValue: string) => {
+    const handleSearchChange = (inputValue: string) => {
         navigate('/')
         setSearchValue(inputValue)
     }
@@ -118,7 +118,7 @@ const SectionCard: React.FC = () => {
 
     return (
         <div className="cards">
-            <Input additionalClass="cards__input" searchValue={searchValue} setSearchValue={setValue}/>
+            <Input additionalClass="cards__input" searchValue={searchValue} setSearchValue={handleSearchChange}/>
 
             {shouldShowButton &&
                 <BackButton additionalClass="cards__button" onClick={goBack}/>
