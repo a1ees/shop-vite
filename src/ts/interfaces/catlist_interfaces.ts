@@ -22,3 +22,4 @@ export interface Service {
     price: number;
     tag: "serv";
 }
+

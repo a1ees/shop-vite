@@ -3,18 +3,18 @@ import {useLocation, useNavigate} from "react-router-dom";
 import cat from "../api/cat.json"
 import './SectionCard.scss';
 import CardTemplate from "./CardTemplate";
-import Input from "./UI/Input.tsx";
-import BackButton from "./UI/BackButton.tsx";
-import {Item, Service} from "../ts/interfaces/catlist_interfaces.ts";
+import Input from "./UI/Input";
+import BackButton from "./UI/BackButton";
+import {Item, Service} from "../ts/interfaces/catlist_interfaces";
 
-type catList = {
+type СatList = {
     list: Item[];
 }
 const SectionCard: React.FC = () => {
 
     const [cardList, setCardList] = useState<(Item | Service)[]>([]);
-    const { list }: catList = cat;
-    console.log(list)
+    const { list } = cat as СatList;
+
     const [searchValue, setSearchValue] = useState<string>('');
     const { pathname } = useLocation();
     const navigate = useNavigate();
