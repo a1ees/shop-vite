@@ -58,9 +58,20 @@ const SectionCard: React.FC = () => {
 
     const filteredCards = useMemo(() => {
         const flattenList = (list: Item[]) => {
-            const getSecondLevel = list.map((item) =>
-                item.subcategory || item.services || []
-            ).flat();
+            const getSecondLevel: (Item | Service)[] = list
+                .map((item) => {
+                    if (!item) {
+                        return [];
+                    }
+                    if ('subcategory' in item) {
+                        return item.subcategory || [];
+                    }
+                    if ('services' in item) {
+                        return item.services || [];
+                    }
+                    return [];
+                })
+                .flat();
 
             return getSecondLevel.map((item) =>
                 "services" in item && item.services || item
